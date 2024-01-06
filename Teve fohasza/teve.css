@@ -1,0 +1,68 @@
+body{
+	background-repeat:no-repeat;
+	background-size:cover;
+	font-family:cursive;
+	background-image: url(sivatag.jpg);
+}
+
+h1{
+	border-bottom: 3px solid orange;
+}
+
+p{
+	text-align:justify;
+}
+
+hr{
+	border:2px solid orange;
+}
+
+input{
+	background-color:transparent;
+	font-family:cursive;
+	width:100px;
+	margin-bottom:10px;
+	font-weight:bold;
+	padding:5px;
+}
+
+#vers{
+	width:600px;
+	margin: 0 auto;
+}
+
+#fohasz{
+	font-style:italic; 
+	text-align:center;
+	text-transform: uppercase;
+}
+
+#oazis{
+	width:30%;
+}
+
+#szoveg{
+	display: inline;
+	letter-spacing: 5px;
+	font-weight: bold;
+	color: orange;
+}
+
+#romhanyi{
+	float: right;
+	font-style: italic;
+	font-size: 11px;
+}
+
+.tevekep{
+	float: right;
+}
+
+#jobbra{
+	float: right;
+}
+
+a{
+	text-decoration: none;
+	color: orange;
+}
