@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digitális Óra</title>
+</head>
+<body>
+    <style>
+        #orakeret
+        {
+            margin           :  24px 0 48px 0    ;
+            width            :  612px            ;
+            border           :  4px solid #861   ;
+            border-radius    :  36px             ;
+            background-color :  #FEC             ;
+            box-shadow       :  8px 8px 8px #A95 ;
+            text-align       :  center           ;
+        }
+    
+        #kijelzo1
+        {
+            padding          :  24px             ;
+            line-height      :  normal           ;
+            font-size        :  96px             ;
+            color            :  #861             ;
+        }
+    
+        #kijelzo2
+        {
+            padding-bottom   :  24px             ;
+            line-height      :  normal           ;
+            font-size        :  36px             ;
+            color            :  #A95             ;
+        }
+    
+    </style>
+    
+    
+    
+    
+    <div id='orakeret'>
+        <div id='kijelzo1'></div>
+        <div id='kijelzo2'></div>
+    </div>
+    
+    
+    
+    
+    <script>
+    
+        napnev = new Array( "vasárnap" , "hétfő" , "kedd" , "szerda" , "csütörtök" , "péntek" , "szombat" )
+    
+        function frissit()
+        {
+            most = new Date()
+    
+            ev   = most.getFullYear()
+            ho   = most.getMonth()+1		// mert 0-tól 11-ig sorszámozza a hónapokat
+            nap  = most.getDate()
+            ssz  = most.getDay()
+    
+            hrs  = most.getHours()
+            min  = most.getMinutes()
+            sec  = most.getSeconds()
+    
+    
+            if( ho  < 10 )   ho  = "0" + ho
+            if( nap < 10 )   nap = "0" + nap
+            if( hrs < 10 )   hrs = "0" + hrs
+            if( min < 10 )   min = "0" + min
+            if( sec < 10 )   sec = "0" + sec
+    
+    
+            kijelzo1.innerHTML = hrs + ":" + min + ":" + sec
+            kijelzo2.innerHTML = ev  + "." + ho  + "." + nap + "<br>" + napnev[ssz]
+        }
+    
+        setInterval('frissit()',1000)
+        frissit()
+    
+    
+    </script>
+</body>
+</html>
