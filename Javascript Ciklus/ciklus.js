@@ -200,24 +200,17 @@ for (let i = 8; i <= 12; j+=2) {
 console.log("17. feladat:")
 
 // 17. feladat
-/*
-let perc = 0;
 
-for (let i = 8; i <= 18; perc+=5) {
-    
-}*/
+function atvalt(percek) {
+    const ora = Math.floor(percek / 60);
+    const perc = percek % 60;
+    let eredmeny = ora < 10 ? '0' + ora : ora.toString();
+    eredmeny += ':' + (perc < 10 ? '0' + perc : perc.toString());
+    return eredmeny;
+}
 
-let startTime = new Date('2024-01-01T08:00:00');
-
-let endTime = new Date('2024-01-01T18:00:00');
-
-let interval = 50 * 60 * 1000; 
-
-for (let currentTime = startTime; currentTime <= endTime; currentTime = new Date(currentTime.getTime() + interval)) {
-    let hours = currentTime.getHours().toString().padStart(2, '0');
-    let minutes = currentTime.getMinutes().toString().padStart(2, '0');
-    
-    console.log(`${hours}:${minutes}`);
+for (let i = 8 * 60; i <= 18 * 60; i+=50) {
+    console.log(atvalt(i));
 }
 
 //
@@ -226,3 +219,8 @@ console.log("18. feladat:");
 
 // 18. feladat
 
+let percek = 8 * 60 + 30;
+for (let i = 1; i <= 8; i++) {
+    console.log(i + '. ' + atvalt(percek), '-', atvalt(percek + 45));
+    percek += 55;
+}
