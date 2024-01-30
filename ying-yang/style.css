@@ -1,0 +1,45 @@
+#circle{
+    box-shadow: 2px 2px 2px hsl(0, 0%, 50%);
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(to right, hsl(0, 0%, 0%) 50%, hsl(0, 0%, 100%) 50%);
+    position: relative;
+}
+
+.small-circle{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    position: absolute;
+    left: 125px;
+}
+
+#circle .small-circle:nth-child(1){
+    background: hsl(0, 0%, 0%);
+}
+
+#circle .small-circle:nth-child(2){
+    background: hsl(0, 0%, 100%);
+    top: 250px;
+}
+
+.smaller-circle{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    position: absolute;
+    left: 200px;
+    top: 330px;
+}
+
+#circle .smaller-circle:nth-child(3){
+    background: hsl(0, 0%, 100%);
+    top: 70px;
+}
+
+#circle .smaller-circle:nth-child(4){
+    background: hsl(0, 0%, 0%);
+}
