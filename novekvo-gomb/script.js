@@ -8,15 +8,12 @@ window.addEventListener('mousemove', (event) => {
 });
 
 let size = 50;
+let delta = 0;
 
 window.addEventListener('wheel', (event) => {
-    if (event.deltaY < 0) {
-        size += 20;
-    } else {
-        size -= 20;
-    }
+    delta = e.deltaY < 0 ? 5 : -5;
+    size = Math.max(10 ,size + delta);
+
     circle.style.width = `${size}px`;
     circle.style.height = `${size}px`;
-    console.log(circle.style.width);
-    console.log(circle.style.height);
 })
