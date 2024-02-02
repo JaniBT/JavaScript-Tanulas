@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: sans-serif;
+        }
+        h1{
+            text-align: center;
+            font-weight: bolder;
+        }
+
+        form {
+            width: 80%;
+            max-width: 400px;
+            background-color: lightgrey;
+            box-shadow: 2px 2px 2px;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Local Storage Feladat</h1>
+    <form>
+        <p>Melyik a kedvenc nyelved?</p>
+        <p>
+            <label for="python">Python</label>
+            <input type="checkbox" name="python" id="python"> (<span id="python-span">0</span>)
+        </p>
+        <p>
+            <label for="html">HTML</label>
+            <input type="checkbox" name="html" id="html"> (<span>0</span>)
+        </p>
+        <p>
+            <label for="css">CSS</label>
+            <input type="checkbox" name="css" id="css"> (<span>0</span>)
+        </p>
+        <p>
+            <label for="javascript">JavaScript</label>
+            <input type="checkbox" name="javascript" id="javascript"> (<span>0</span>)
+        </p>
+        <p>
+            <label for="ccapa">C#</label>
+            <input type="checkbox" name="ccapa" id="ccapa"> (<span>0</span>)
+        </p>
+        <button type="reset">Reset</button>
+    </form>
+
+    <script>
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+        for (const checkbox of checkboxes) {
+            checkbox.addEventListener('click', function() => {
+                
+            })
+        }
+    </script>
+</body>
+</html>
