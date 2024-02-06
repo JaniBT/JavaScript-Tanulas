@@ -32,7 +32,7 @@
         <p>Melyik a kedvenc nyelved?</p>
         <p>
             <label for="python">Python</label>
-            <input type="checkbox" name="python" id="python"> (<span id="python-span">0</span>)
+            <input type="checkbox" name="python" id="python"> (<span>0</span>)
         </p>
         <p>
             <label for="html">HTML</label>
@@ -50,15 +50,27 @@
             <label for="ccapa">C#</label>
             <input type="checkbox" name="ccapa" id="ccapa"> (<span>0</span>)
         </p>
-        <button type="reset">Reset</button>
+        <button type="button" onclick="setCookie()"></button>
+        <button type="reset" id="reset">Reset</button>
     </form>
 
     <script>
         const checkboxes = document.querySelectorAll('input[type="checkbox"]');
         for (const checkbox of checkboxes) {
-            checkbox.addEventListener('click', function() => {
-                
-            })
+            checkbox.addEventListener('click', function(e) {
+                if (checkbox.checked) {
+                    let spanElement = document.querySelector(`#${checkbox.id} + span`);
+                    let counter = Number(spanElement.innerHTML);
+                    spanElement.innerText = counter + 1;
+                    sessionStorage.setItem(checkbox.id, counter + 1);
+                }
+            });
+        }
+
+        for (const checkbox of checkboxes) {
+            let counter = sessionStorage.getItem(checkbox.id);
+            let spanElement = document.querySelector(`#${checkbox.id} + span`);
+            spanElement.innerText = counter ? counter : 0;
         }
     </script>
 </body>

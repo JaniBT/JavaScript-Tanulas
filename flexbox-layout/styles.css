@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: url("../pozicionalas/pics/bg-body.png") #fff;
+}
+
+header{
+    font-family: 'Lobster', sans-serif;
+    text-align: center;
+    font-size: 70px;
+    border-top: 2px dashed rgba(0, 0, 0, 0.2);
+    border-bottom: 2px dashed rgba(0, 0, 0, 0.2);
+    padding: 20px 0;
+    margin: 40px;
+    background: rgba(255, 255, 255, .8);
+    color: #76b332;
+}
+
+.content{
+    display: flex;
+    /*flex-direction: row;*/
+    /*flex-wrap: wrap;*/
+    flex-flow: row nowrap;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
