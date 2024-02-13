@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>A Föld keringése</title>
+
+    <meta http-equiv='imagetoolbar' content='no'>
+
+    <style>
+
+        body
+        {
+            background          : black url('sky.jpg') ;
+            background-repeat   : repeat               ;
+            background-position : 0 0                  ;
+        }
+
+        #nap, #fold, #hold
+        {
+            position            : absolute             ;
+            z-index             : 0                    ;
+        }
+
+    </style>
+
+</head>
+
+
+<body id='lap'  onLoad=' a=b=0; bgX=bgY=0; kering(); '>
+
+<div id = 'nap'>
+
+    <img src='sun.gif' width=200 height=200>
+
+    <div id="merkur">
+
+        <img src="mercury.gif" width="46" height="46">
+        
+    </div>
+
+    <div id="venusz">
+
+    </div>
+
+    <div id = 'fold'>
+
+        <img src='earth.gif' width=68 height=68>
+
+        <div id = 'hold'>
+
+            <img src='moon.gif' width=20 height=20>
+
+        </div>
+
+    </div>
+
+    <div id = 'mars'>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- -- --  JavaScript függvény megvalósítása  -- -- -->
+
+
+
+
+<script>
+
+    function kering()
+    {
+
+        szelesseg = window.innerWidth                                 //  aktuális ablakszélessége
+        magassag  = window.innerHeight                                //  aktuális ablakmagasság
+
+        nap.style.left= szelesseg / 2  - 100+'px'                     //  a Nap középre helyezése
+        nap.style.top = magassag  / 2  - 100+'px'
+
+        merkur.style.left =
+
+        fold.style.left = 250*Math.cos(a)+66+'px'                     // (200-68)/2 = 66
+        fold.style.top  = 150*Math.sin(a)+66+'px'
+
+        hold.style.left =  50*Math.cos(b)+24+'px'                     // ( 68-20)/2 = 24
+        hold.style.top  =  30*Math.sin(b)+24+'px'
+        if (parseInt(hold.style.left)<-48+24) hold.style.zIndex=+1    // a Hold a Föld előtt
+        if (parseInt(hold.style.left)>+48+24) hold.style.zIndex=-1    // a Hold a Föld mögött
+
+        a=a-.002                                                      // a Föld keringésének sebessége
+        b=b-.024                                                      // a Hold keringésének sebessége
+
+        document.body.style.backgroundPosition = bgX + 'px ' + bgY + 'px'
+
+        bgX=bgX+.25                                                   // háttér mozgatása jobbra
+        bgY=bgY-.125                                                  // háttér mozgatása felfele
+
+        setTimeout('kering()',15);                                    // a keringés sebessége itt állítható
+
+    }
+
+</script>
+
+
+
+
+<!-- -- -- --  JavaScript függvény vége  -- -- -- -- -->
