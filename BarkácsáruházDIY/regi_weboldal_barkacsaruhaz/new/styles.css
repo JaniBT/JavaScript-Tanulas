@@ -1,7 +1,7 @@
 body{
-    background-color: white;
     padding: 0;
     margin: 0;
+    background: white url("./assets/bg-body.jpg") no-repeat center;
 }
 
 .navbar{
@@ -11,6 +11,7 @@ body{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: flex-start;
     gap: 20px;
     padding: 20px;
     font-family: Inter, sans-serif;
@@ -24,6 +25,7 @@ body{
 }
 
 .main-title{
+    padding-top: 15px;
     font-family: Georgia, 'Times New Roman', Times, sans-serif;
     font-weight: normal;
     text-align: center;
@@ -32,24 +34,25 @@ body{
 }
 
 main{
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
-    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .picture-w-button{
-    width: 90%;
+    width: 95%;
     margin: 0 auto;
-    background: url("./assets/barkacs-tools.jpg") no-repeat center;
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
+    background: url("./assets/barkacs-tools.jpg") no-repeat center/cover;
     height: 400px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
 }
 
 #button-underline{
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     text-decoration: none;
     color: white;
     font-family: Inter, sans-serif;
