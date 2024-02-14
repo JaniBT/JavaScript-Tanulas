@@ -137,7 +137,7 @@ doboz9_button.addEventListener('click', e => {
     if (operator_selector.value === "mult") {
         doboz9_span.innerText = state * input_number.value
     } else if (operator_selector.value === "div") {
-        doboz9_span.innerText = state / input_number.value
+        doboz9_span.innerText = (state / input_number.value).toFixed(1)
     } else if (operator_selector.value === "add") {
         doboz9_span.innerText = state + parseInt(input_number.value)
     } else {
