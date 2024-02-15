@@ -1,0 +1,25 @@
+#eredmeny {
+    background-color: navy;
+    color: white;
+    padding: 48px;
+    border-radius: 10px;
+    position: fixed;
+    top: 50px;
+    left: 40%;
+    display: none;
+    border-width: 2px;
+    border-style: solid;
+
+}
+
+#container {
+    background-color: navy;
+    color: white;
+    padding: 48px;
+    border-radius: 10px;
+    margin: 2% 10%;
+}
+
+#container h1 {
+    font-family: sans-serif;
+}
