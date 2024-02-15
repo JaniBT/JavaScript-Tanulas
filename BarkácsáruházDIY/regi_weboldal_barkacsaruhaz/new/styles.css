@@ -24,32 +24,123 @@ body{
     font-size: 17px;
 }
 
+.overlay {
+    height: 0;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+    .overlay a {font-size: 20px}
+    .overlay .closebtn {
+        font-size: 40px;
+        top: 15px;
+        right: 35px;
+    }
+}
+
+.hamburger-menu button{
+    color: #dddddd;
+    background-color: #000;
+    border: 1px solid black;
+    font-size: 15px;
+    padding: 10px;
+    transition: all 0.3s ease-in;
+}
+
+.hamburger-menu button:hover{
+    color: #000;
+    background-color: #dddddd;
+    border-radius: 10px;
+    transition: all 0.3s ease-out;
+}
+
+@media screen and (min-width: 750px) {
+    .hamburger-menu button{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 750px){
+    .navbar{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navbar a{
+        display: none;
+    }
+
+}
+
 .main-title{
     padding-top: 15px;
+    margin-bottom: 15px;
     font-family: Georgia, 'Times New Roman', Times, sans-serif;
     font-weight: normal;
     text-align: center;
     color: black;
-
+    font-size: 50px;
 }
 
 main{
     width: 90%;
     margin: 0 auto;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
+    padding-bottom: 20px;
 }
 
 .picture-w-button{
     width: 95%;
     margin: 0 auto;
     background: url("./assets/barkacs-tools.jpg") no-repeat center/cover;
-    height: 400px;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    height: 600px;
+    text-align: center;
+    /*display: flex;*/
+    /*justify-content: center;*/
+    /*align-items: center;*/
 }
 
-#button-underline{
+.button-underline{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -90%);
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 40px;
@@ -59,6 +150,92 @@ main{
     font-weight: normal;
     font-size: 15px;
     background-color: dodgerblue;
+    transition: all 0.2s ease-in;
+}
+
+@media screen and (max-width: 700px){
+    .button-underline{
+        display: none;
+    }
+}
+
+.carousel-kepek{
+    max-height: 600px;
+    max-width: 900px;
+}
+
+@media screen and (max-width: 1050px){
+    main{
+        width: 100%;
+    }
+
+    .picture-w-button{
+        background: none;
+        height: 300px;
+    }
+
+    .carousel-kepek{
+        height: 300px;
+    }
+
+    .footer{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+    }
+}
+
+@media screen and (max-width: 650px){
+    .picture-w-button{
+        background: none;
+        height: 200px;
+    }
+    .carousel-kepek{
+        height: 200px;
+    }
+}
+
+.tabla{
+    width: 90%;
+}
+
+.alcim{
+    font-family: Georgia, 'Times New Roman', Times, sans-serif;
+    margin: 15px 0 15px 42px;
+}
+
+.alcim h2{
+    font-size: 35px;
+}
+
+.table-tabla{
+    width: 100%;
+    margin-left: 40px;
+}
+
+@media screen and (max-width: 700px){
+    .table-tabla{
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .alcim{
+        margin: 15px 0 15px 15px;
+    }
+
+    .alcim h2{
+        font-size: 25px;
+    }
+}
+
+.button-underline:hover{
+    background-color: white;
+    color: dodgerblue;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid black;
+    transition: all 0.2s ease-out;
 }
 
 .footer{
@@ -72,4 +249,12 @@ main{
     justify-content: space-around;
     list-style-type: none;
     background-color: #0d2a8a;
+}
+
+@media screen and (max-width: 800px){
+    .footer{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 }
