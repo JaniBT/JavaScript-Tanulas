@@ -116,3 +116,18 @@ body{
 .is-active{
     color: white;
 }
+
+main{
+    margin: 0 auto;
+    width: 95%;
+    padding-top: 1px;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+main h1{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, sans-serif;
+    font-size: 45px;
+    font-weight: lighter;
+    padding-bottom: 20px;
+}
