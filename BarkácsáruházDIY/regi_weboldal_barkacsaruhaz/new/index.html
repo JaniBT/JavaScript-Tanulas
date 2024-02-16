@@ -13,8 +13,8 @@
 <body>
     <header class="navbar">
         <img src="./assets/hammer.png" alt="Főoldal" style="max-width: 32px;">
-        <a class="navbar-a" href="index.html">Főoldal</a>
-        <a class="navbar-a" href="#">Festékek</a>
+        <a class="navbar-a is-active" href="index.html">Főoldal</a>
+        <a class="navbar-a" href="festekek.html">Festékek</a>
         <a class="navbar-a" href="#">Faanyagok</a>
         <a class="navbar-a" href="#">Szerszámkatalógus</a>
         <a class="navbar-a" href="#">Rólunk</a>
@@ -31,7 +31,7 @@
         <!-- Overlay content -->
         <div class="overlay-content">
             <a href="index.html">Főoldal</a>
-            <a href="#">Festékek</a>
+            <a href="festekek.html">Festékek</a>
             <a href="#">Szerszámkatalógus</a>
             <a href="#">Rólunk</a>
             <a href="#">Blog</a>
@@ -115,16 +115,6 @@
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script>
-        function openNav() {
-            document.getElementById("myNav").style.height = "100%";
-            document.querySelector(".carousel").style.visibility = "hidden";
-        }
-
-        function closeNav() {
-            document.getElementById("myNav").style.height = "0%";
-            document.querySelector(".carousel").style.visibility = "visible";
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
