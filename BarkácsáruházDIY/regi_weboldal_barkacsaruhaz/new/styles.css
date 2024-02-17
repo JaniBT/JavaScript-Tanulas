@@ -199,6 +199,13 @@ main{
     .carousel-kepek{
         height: 200px;
     }
+    main{
+        padding-bottom: 150px;
+    }
+}
+
+.is-active{
+    color: white;
 }
 
 .tabla{
