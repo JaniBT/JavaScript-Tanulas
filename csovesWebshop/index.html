@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="myModal" class="modal">
+        <span id="close">&times;</span>
+        <form action="">
+            <label for="termek">Termék neve:</label>
+            <input type="text" name="termek" id="termekNev">
+            <label for="ar">Termék ára:</label>
+            <input type="number" name="ar" id="termekAr">
+            <div>
+                <label for="elerheto">Van-e raktáron?</label>
+                <input type="checkbox" name="elerheto" id="termekElerheto">
+            </div>
+            <button type="button" id="kuldes2">Kész</button>
+        </form>
+    </div>
+
     <header>
         <h1>csövesWebshop</h1>
     </header>
@@ -19,7 +35,11 @@
             <input type="text" name="termek" id="termekNev">
             <label for="ar">Termék ára:</label>
             <input type="number" name="ar" id="termekAr">
-            <button type="button">Küldés</button>
+            <div>
+                <label for="elerheto">Van-e raktáron?</label>
+                <input type="checkbox" name="elerheto" id="termekElerheto">
+            </div>
+            <button type="button" id="kuldes">Küldés</button>
         </form>
         <div class="termekek">
             <h2>Termékek</h2>
