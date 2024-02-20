@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+:root{
+    --ff: 'Poppins', sans-serif;
+    --fs-400: 1rem;
+    --fs-550: 1.5rem;
+    --fs-600: 1.8rem;
+
+    --fw-300: 300;
+    --fw-400: 400;
+    --fw-700: 700;
+
+    --clr-white: #fff;
+    --clr-gray: hsl(210, 29%, 24%);
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: var(--ff);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--clr-gray);
+}
+
+header h1{
+    font-size: var(--fs-600);
+    font-weight: var(--fw-700);
+    color: var(--clr-white);
+    text-align: center;
+}
+
+main{
+    width: 50%;
+    margin-inline: auto;
+}
+
+.images{
+    display: flex;
+    background: url(csoveswebshop.jpg) center/cover no-repeat;
+    height: 400px;
+    justify-content: center;
+    align-items: end;
+}
+
+.images h2{
+    color: var(--clr-white);
+    font-size: var(--fs-550);
+    font-weight: var(--fw-400);
+}
+
+label{
+    color: var(--clr-gray);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin-block: 3rem;
+    margin-inline: auto;
+}
+
+form input {
+    margin-block: 0.5rem;
+}
+
+button{
+    width: 50%;
+    margin-block: 1rem;
+    margin-inline: auto;
+    padding: 0.5rem;
+    background-color: var(--clr-white);
+    border: 1px solid black;
+    transition: all 0.3s ease-in;
+}
+
+button:hover{
+    background-color: black;
+    color: var(--clr-white);
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+}
+
+.termekek{
+    text-align: center;
+}
+
+.termekek h2{
+    font-size: var(--fs-600);
+}
+
+.items{
+    display: grid;
+    gap: 1rem;
+}
+
+@media (min-width: 800px) {
+    .items{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+.item{
+    min-width: 150px;
+    min-height: 75px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.item p{
+    text-align: center;
+    font-size: var(--fs-400);
+    margin-block: 0;
+    margin-inline: auto;
+}
+
+.item button{
+    display: block;
+    margin-inline: auto;
+}
+
+.is-unavailable{
+    background-color: orangered;
+    color: var(--clr-gray);
+}
