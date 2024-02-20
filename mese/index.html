@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mese</title>
+    <style>
+        body {
+            font-family: cursive;
+            font-size: 1.3rem;
+        }
+        main {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 20px;
+            border: 1px solid lightgrey;
+            box-shadow: 2px 2px 2px grey;
+        }
+        img {
+            max-width: 100%;
+            border-radius: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        button {
+            font-family: cursive;
+            font-size: 1.3rem;
+            margin-left: 20px;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+        input[type="text"] {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <h1>A <span class="foszereplo">kismalac</span> és a farkasok</h1>
+    <main>
+        <p>Egyszer volt, hol nem volt, volt egyszer egy <span class="foszereplo">kismalac</span>, aki az erdőben éldegélt. Egy nap találkozott két farkassal, akik éhesen csillapították volna éhségüket vele. A <span class="foszereplo">kismalac</span> azonban ügyesen és okosan meggyőzte a farkasokat, hogy inkább együtt dolgozva gazdagabban lakhatnak. Így hárman együtt alapítottak egy gazdaságot, és boldogan éltek, míg meg nem öregedtek.</p>
+        <img src="farkasok.jpg" alt="farkasok">
+        <form>
+            <p>
+                <label for="foszereploNev">Főszereplő:</label>
+                <input type="text" id="foszereploNev">
+            </p>
+            <p>
+                <label for="betuszin">Betűszín:</label>
+                <input type="color" id="betuszin">
+            </p>
+            <p>
+                <label for="hatterszin">Háttérszín:</label>
+                <input type="color" id="hatterszin" value="#ffffff">
+                <button type="submit">Küldés</button>
+            </p>           
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
