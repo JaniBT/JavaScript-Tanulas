@@ -9,6 +9,7 @@
     CRUD
 */
 
+
 let state = {
     products: [
         {
@@ -29,17 +30,84 @@ let state = {
             price: 5500,
             isInStock: true
         }
-    ]
+    ],
+    editedId: ''
+}
+
+function renderEditProduct() {
+
+    if (state.editedId === '') {
+        document.getElementById("edit-product").innerHTML = ''
+        return
+    }
+
+    let foundProduct
+    for (const product of state.products) {
+        if(product.id === state.editedId) {
+            foundProduct = product
+            break
+        }
+    }
+    
+    let editFormHTML = `<h1>Termék szerkesztése:</h1>
+        <form id="update-product" class="p-5">
+        <label class="w-100">
+        Név:
+        <input class="form-control" type="text" name="name" value="${foundProduct.name}">
+        </label>
+        <label class="w-100">
+        Ár:
+        <input class="form-control" type="number" name="price" value="${foundProduct.price}">
+        </label>
+        <label class="w-100">
+        Van készleten?
+        <input class="form-control" type="checkbox" name="isInStock" ${foundProduct.isInStock ? 'checked' : ''}>
+        </label>
+        <button class="btn btn-primary" type="submit">Küldés</button>
+    </form>`
+
+    document.getElementById('edit-product').innerHTML = editFormHTML
+
+    document.getElementById('update-product').onsubmit = (e) => {
+        e.preventDefault()
+        let price = Number(e.target.elements.price.value)
+        let name = e.target.elements.name.value
+        let isInStock = e.target.elements.isInStock.checked
+        let foundIndex = getIndexById(e.target.elements.productid)
+
+        state.products[foundIndex] = {
+            id: state.editedId,
+            name: name,
+            price: price,
+            isInStock: isInStock
+        }
+        state.editedId = ''
+        renderEditProduct()
+
+        renderProducts()
+    }
+}
+
+function getIndexById(id) {
+    let foundIndex
+    for (i = 0; i < state.products.length; i++) {
+        if (state.products[i].id === id) {
+            foundIndex = i
+            break
+        }
+    }
+    return foundIndex
 }
 
 function renderProducts() {
-    let productsHTML = '';
+    let productsHTML = ''
 
     for (const product of state.products) {
         productsHTML += `
         <div class="card m-2 p-2 ${product.isInStock ? `` : `bg-danger`}">
             <p>${product.name}</p>
             <p>${product.price}</p>
+            <button class="btn btn-warning mb-2 float right edit-product" data-productid="${product.id}">Szerkesztés</button>
             <button class="btn btn-danger float-right delete-product" data-productid="${product.id}">
                 Törlés
             </button>       
@@ -48,18 +116,19 @@ function renderProducts() {
     }
     document.getElementById("product-list-component").innerHTML = productsHTML;
 
+    for (const editBtn of document.querySelectorAll('.edit-product')) {
+        editBtn.onclick = function(e) {
+            const id = e.target.dataset.productid
+            state.editedId = id
+
+            renderEditProduct()
+        }
+    }
+
     for (const deleteBtn of document.querySelectorAll('.delete-product')) {
         // action
         deleteBtn.onclick = function (e){
-            let id = e.target.dataset.productid;
-    
-            let foundIndex;
-            for (let i = 0; i < state.products.length; i++) {
-                if(state.products[i].id === id){
-                    foundIndex = i;
-                    break;
-                }
-            }
+            const foundIndex = getIndexById(e.target.dataset.productid)
     
             //state change
             state.products.splice(foundIndex, 1);
