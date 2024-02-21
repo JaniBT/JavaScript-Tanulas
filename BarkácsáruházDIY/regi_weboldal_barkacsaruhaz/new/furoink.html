@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DIY - Fúróink</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="faanyagok.css">
+</head>
+<body>
+    <header class="navbara">
+        <img src="./assets/hammer.png" alt="Főoldal" style="max-width: 32px;">
+        <a class="navbar-a" href="index.html">Főoldal</a>
+        <a class="navbar-a" href="festekek.html">Festékek</a>
+        <a class="navbar-a" href="faanyagok.html">Faanyagok</a>
+        <a class="navbar-a is-active" href="furoink.html">Szerszámkatalógus</a>
+        <a class="navbar-a" href="rolunk.html">Rólunk</a>
+        <a class="navbar-a" href="#">Blog</a>
+        <div class="hamburger-menu">
+            <button onclick="openNav()">&#9776;</button>
+        </div>
+    </header>
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <a href="index.html">Főoldal</a>
+            <a href="festekek.html">Festékek</a>
+            <a href="faanyagok.html">Faanyagok</a>
+            <a href="furoink.html">Szerszámkatalógus</a>
+            <a href="#">Rólunk</a>
+            <a href="#">Blog</a>
+        </div>
+
+    </div>
+
+    <main>
+        <div class="main-title">
+            <h1>Fúróink</h1>
+        </div>
+        <div class="grid-box">
+            <div class="furok">
+                <img src="./assets/furo1.jpg" alt="" style="width: 250px;">
+                <h2>Zöld fúró</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi officia quaerat accusantium quam tempora ipsa ut ducimus iure fugiat distinctio, officiis sed optio id nobis, explicabo voluptates nostrum, minus dignissimos?</p>
+                <ul>
+                    <li>Ár: 15000ft</li>
+                    <li>Készleten: 1-5db</li>
+                </ul>
+            </div>
+            <div class="furok">
+                <img src="./assets/furo2.jpg" alt="" style="width: 250px;">
+                <h2>Kék fúró</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos obcaecati blanditiis culpa autem commodi nam cupiditate minima, nemo dolores quibusdam sunt ipsum iusto officia quia amet eum corporis repellendus voluptatibus.</p>
+                <ul>
+                    <li>Ár: 25000ft</li>
+                    <li>Készleten: 1db</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <ul class="footer">
+            <li>Elérhetőségeink</li>
+            <li><strong>Levél:</strong> DIY Barkácsáruház</li>
+            <li><strong>E-mail:</strong> info@barkacsaruhaz.hu</li>
+            <li><strong>Telefon:</strong>+36-1-555-55-55</li>
+        </ul>
+    </footer>
+</body>
+</html>

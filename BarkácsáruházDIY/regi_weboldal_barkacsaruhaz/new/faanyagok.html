@@ -6,15 +6,16 @@
     <title>DIY - Faanyagok</title>
     <link rel="stylesheet" href="festekek-styles.css">
     <link rel="stylesheet" href="faanyagok.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 </head>
 <body>
-    <header class="navbar">
+    <header class="navbara">
         <img src="./assets/hammer.png" alt="Főoldal" style="max-width: 32px;">
         <a class="navbar-a" href="index.html">Főoldal</a>
         <a class="navbar-a" href="festekek.html">Festékek</a>
         <a class="navbar-a is-active" href="faanyagok.html">Faanyagok</a>
-        <a class="navbar-a" href="#">Szerszámkatalógus</a>
-        <a class="navbar-a" href="#">Rólunk</a>
+        <a class="navbar-a" href="furoink.html">Szerszámkatalógus</a>
+        <a class="navbar-a" href="rolunk.html">Rólunk</a>
         <a class="navbar-a" href="#">Blog</a>
         <div class="hamburger-menu">
             <button onclick="openNav()">&#9776;</button>
@@ -30,16 +31,76 @@
             <a href="index.html">Főoldal</a>
             <a href="festekek.html">Festékek</a>
             <a href="faanyagok.html">Faanyagok</a>
-            <a href="">Szerszámkatalógus</a>
-            <a href="#">Rólunk</a>
+            <a href="furoink.html">Szerszámkatalógus</a>
+            <a href="rolunk">Rólunk</a>
             <a href="#">Blog</a>
         </div>
 
     </div>
-    <main>
-        
+    <main class="faanyagok">
+        <div class="container-fluid pb-5 pt-5 ml-5 mr-5">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./assets/bukkfa.jpg" class="card-img-top rounded-5 " alt="...">
+                        <div class="card-body">
+                            
+                            <a href="#" class="btn btn-primary">Bükkfa</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./assets/bukkfa.jpg" class="card-img-top rounded-5 " alt="...">
+                        <div class="card-body">
+                            
+                            <a href="#" class="btn btn-primary">Bükkfa</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./assets/bukkfa.jpg" class="card-img-top rounded-5 " alt="...">
+                        <div class="card-body">
+                            
+                            <a href="#" class="btn btn-primary">Bükkfa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./assets/bukkfa.jpg" class="card-img-top rounded-5 " alt="...">
+                        <div class="card-body">
+                            
+                            <a href="#" class="btn btn-primary">Bükkfa</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="card" style="width: 18rem;">
+                        <img src="./assets/bukkfa.jpg" class="card-img-top rounded-5 " alt="...">
+                        <div class="card-body">
+                            
+                            <a href="#" class="btn btn-primary">Bükkfa</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <footer>
+        <ul class="footer">
+            <li>Elérhetőségeink</li>
+            <li><strong>Levél:</strong> DIY Barkácsáruház</li>
+            <li><strong>E-mail:</strong> info@barkacsaruhaz.hu</li>
+            <li><strong>Telefon:</strong>+36-1-555-55-55</li>
+        </ul>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>

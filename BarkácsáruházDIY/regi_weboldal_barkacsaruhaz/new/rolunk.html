@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="faanyagok.css">
+</head>
+<body>
+    <header class="navbar">
+        <img src="./assets/hammer.png" alt="Főoldal" style="max-width: 32px;">
+        <a class="navbar-a" href="index.html">Főoldal</a>
+        <a class="navbar-a is-active" href="festekek.html">Festékek</a>
+        <a class="navbar-a" href="faanyagok.html">Faanyagok</a>
+        <a class="navbar-a" href="furoink.html">Szerszámkatalógus</a>
+        <a class="navbar-a" href="#">Rólunk</a>
+        <a class="navbar-a" href="#">Blog</a>
+        <div class="hamburger-menu">
+            <button onclick="openNav()">&#9776;</button>
+        </div>
+    </header>
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+        <!-- Overlay content -->
+        <div class="overlay-content">
+            <a href="index.html">Főoldal</a>
+            <a href="festekek.html">Festékek</a>
+            <a href="faanyagok.html">Faanyagok</a>
+            <a href="furoink.html">Szerszámkatalógus</a>
+            <a href="rolunk.html">Rólunk</a>
+            <a href="#">Blog</a>
+        </div>
+
+    </div>
+
+    <main>
+        <div class="main-title">
+            <h1>Rólunk</h1>
+            <p style="font-size: 25px; max-width: 50%; margin-inline: auto;">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni facere magnam placeat ipsa laborum maiores minima earum saepe ullam, dolorum nobis qui minus quis nam distinctio provident facilis tempora. Quibusdam.</p>
+        </div>
+        <div class="emberek">
+            <div class="ember" style="max-width: 50%; margin-inline: auto; margin-block: 2rem;">
+                <img src="./assets/erika.jpg" alt="" style="max-width: 150px;">
+                <h2>Erika</h2>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sint soluta neque laborum quia voluptas qui praesentium optio numquam dolorum ratione cum perspiciatis magni a doloremque eligendi officiis, omnis deleniti hic.</p>
+            </div>
+            <div class="ember" style="max-width: 50%; margin-inline: auto; margin-block: 2rem;">
+                <img src="./assets/andras.jpg" alt="" style="max-width: 150px;">
+                <h2>András</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus molestiae dolorem doloribus magnam cumque ducimus et, neque mollitia odio facilis enim incidunt, voluptatem magni assumenda doloremque! Rem a odit eius.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <ul class="footer">
+            <li>Elérhetőségeink</li>
+            <li><strong>Levél:</strong> DIY Barkácsáruház</li>
+            <li><strong>E-mail:</strong> info@barkacsaruhaz.hu</li>
+            <li><strong>Telefon:</strong>+36-1-555-55-55</li>
+        </ul>
+    </footer>
+</body>
+</html>
