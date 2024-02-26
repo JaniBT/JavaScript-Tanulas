@@ -31,7 +31,8 @@ let state = {
             isInStock: true
         }
     ],
-    editedId: ''
+    editedId: '',
+    filterName: ''
 }
 
 function renderEditProduct() {
@@ -103,6 +104,9 @@ function renderProducts() {
     let productsHTML = ''
 
     for (const product of state.products) {
+        if (state.filterName != '' && product.name.toLowerCase().indexOf(state.filterName) === -1) {
+            continue
+        }
         productsHTML += `
         <div class="card m-2 p-2 ${product.isInStock ? `` : `bg-danger`}">
             <p>${product.name}</p>
@@ -173,10 +177,6 @@ document.getElementById('create-product').onsubmit = function(e){
 
     //render
     renderProducts();
-
-    console.log(price);
-    console.log(name);
-    console.log(isInStock);
 };
 
 function uuidv4() {
@@ -184,4 +184,12 @@ function uuidv4() {
         let r = Math.random() * 16 | 0, v = c == `x` ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
+}
+
+const search = document.getElementById('kereses')
+search.onsubmit = function(e) {
+    e.preventDefault()
+    const searchName = document.getElementById('kereso-mezo').value
+    state.filterName = searchName.toLowerCase()
+    renderProducts()
 }
