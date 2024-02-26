@@ -14,24 +14,25 @@ let state = {
     products: [
         {
             id: uuidv4(),
-            name: 'Teszt termék 1',
+            name: 'Audi A8',
             price: 2500,
             isInStock: true
         },
         {
             id: uuidv4(),
-            name: 'Teszt termék 2',
+            name: 'Mappa',
             price: 3500,
             isInStock: false
         },
         {
             id: uuidv4(),
-            name: 'Teszt termék 3',
+            name: 'Nudes',
             price: 5500,
             isInStock: true
         }
     ],
-    editedId: ''
+    editedId: '',
+    filterName: ''
 }
 
 function renderEditProduct() {
@@ -73,10 +74,10 @@ function renderEditProduct() {
         let price = Number(e.target.elements.price.value)
         let name = e.target.elements.name.value
         let isInStock = e.target.elements.isInStock.checked
-        let foundIndex = getIndexById(e.target.elements.productid)
+        let foundIndex = getIndexById(state.editedId)
 
         state.products[foundIndex] = {
-            id: state.editedId,
+            id: e.target.dataset.productid,
             name: name,
             price: price,
             isInStock: isInStock
@@ -103,6 +104,9 @@ function renderProducts() {
     let productsHTML = ''
 
     for (const product of state.products) {
+        if (state.filterName != '' && product.name.toLowerCase().indexOf(state.filterName) === -1) {
+            continue
+        }
         productsHTML += `
         <div class="card m-2 p-2 ${product.isInStock ? `` : `bg-danger`}">
             <p>${product.name}</p>
@@ -136,7 +140,17 @@ function renderProducts() {
             //render
             renderProducts();
         }
-    }    
+    }   
+    document.getElementById('osszegzo').onclick = function(e) {
+        let max_osszeg = 0
+        for (const prod_price of state.products) {
+            max_osszeg += prod_price.price
+        }
+        alert(`A termékek árának összege: ${max_osszeg} Ft`)
+    }
+
+    
+
 }
 window.onload = renderProducts;
 
@@ -163,10 +177,6 @@ document.getElementById('create-product').onsubmit = function(e){
 
     //render
     renderProducts();
-
-    console.log(price);
-    console.log(name);
-    console.log(isInStock);
 };
 
 function uuidv4() {
@@ -174,4 +184,12 @@ function uuidv4() {
         let r = Math.random() * 16 | 0, v = c == `x` ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
+}
+
+const search = document.getElementById('kereses')
+search.onsubmit = function(e) {
+    e.preventDefault()
+    const searchName = document.getElementById('kereso-mezo').value
+    state.filterName = searchName.toLowerCase()
+    renderProducts()
 }
