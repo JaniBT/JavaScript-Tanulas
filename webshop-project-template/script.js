@@ -14,19 +14,19 @@ let state = {
     products: [
         {
             id: uuidv4(),
-            name: 'Teszt termék 1',
+            name: 'Audi A8',
             price: 2500,
             isInStock: true
         },
         {
             id: uuidv4(),
-            name: 'Teszt termék 2',
+            name: 'Mappa',
             price: 3500,
             isInStock: false
         },
         {
             id: uuidv4(),
-            name: 'Teszt termék 3',
+            name: 'Nudes',
             price: 5500,
             isInStock: true
         }
@@ -73,10 +73,10 @@ function renderEditProduct() {
         let price = Number(e.target.elements.price.value)
         let name = e.target.elements.name.value
         let isInStock = e.target.elements.isInStock.checked
-        let foundIndex = getIndexById(e.target.elements.productid)
+        let foundIndex = getIndexById(state.editedId)
 
         state.products[foundIndex] = {
-            id: state.editedId,
+            id: e.target.dataset.productid,
             name: name,
             price: price,
             isInStock: isInStock
@@ -136,7 +136,17 @@ function renderProducts() {
             //render
             renderProducts();
         }
-    }    
+    }   
+    document.getElementById('osszegzo').onclick = function(e) {
+        let max_osszeg = 0
+        for (const prod_price of state.products) {
+            max_osszeg += prod_price.price
+        }
+        alert(`A termékek árának összege: ${max_osszeg} Ft`)
+    }
+
+    
+
 }
 window.onload = renderProducts;
 
