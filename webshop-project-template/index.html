@@ -92,7 +92,15 @@
           Termék neve:
         </label>
         <input type="search" name="productName" id="kereso-mezo">
-        <button class="btn-secondary mt-3" id="search" type="submit">Keresés</button>
+        <label for="productPriceMin" class="w-100 mt-3">
+          Termék minimum ára
+        </label>
+        <input type="number" class="form-control" id="minAr">
+        <label for="productPriceMax" class="w-100 mt-3">
+          Termék maximum ára
+        </label>
+        <input type="number" class="form-control" id="maxAr">
+        <button class="btn btn-info mt-3" type="submit">Keresés</button>
       </form>
       <div class="row">
         <div id="edit-product">

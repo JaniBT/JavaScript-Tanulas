@@ -1,0 +1,35 @@
+const productsList = [
+    {
+        id: "6",
+        name: "Fali csempe",
+        price: 2000        
+    },
+    {
+        id: "2",
+        name: "Beton - szárazbeton",
+        price: 8000,
+        old-price: 10000       
+    },
+    {
+        id: "4",
+        name: "Kanapé",
+        price: 10000
+    },
+    {
+        id: "1",
+        name: "Komód",
+        price: 23000
+    },
+    {
+        id: "5",
+        name: "Faszenes BBQ grill",
+        price: 50000,
+        old-price: 80000
+    },
+    {
+        id: "3",
+        name: "Konyhabútor",
+        price: 99000,
+        old-price: 120000
+    }
+]

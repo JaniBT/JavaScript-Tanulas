@@ -32,7 +32,9 @@ let state = {
         }
     ],
     editedId: '',
-    filterName: ''
+    filterName: '',
+    minAr: 0,
+    maxAr: undefined
 }
 
 function renderEditProduct() {
@@ -105,6 +107,9 @@ function renderProducts() {
 
     for (const product of state.products) {
         if (state.filterName != '' && product.name.toLowerCase().indexOf(state.filterName) === -1) {
+            continue
+        }
+        if (product.price < state.minAr || (state.maxAr ? product.price > state.price : false)){
             continue
         }
         productsHTML += `
@@ -191,5 +196,9 @@ search.onsubmit = function(e) {
     e.preventDefault()
     const searchName = document.getElementById('kereso-mezo').value
     state.filterName = searchName.toLowerCase()
+    const min_ar = e.target.elements.minAr.value
+    const max_ar = e.target.elements.maxAr.value !== "" ? e.target.elements.maxAr.value : undefined
+    state.minAr = min_ar
+    state.maxAr = max_ar
     renderProducts()
 }
