@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Teendők</title>
+</head>
+
+<body>
+  <div class="container">
+    <div style="font-size:0.8em">
+      <h1 class="text-center display-6">
+        <b>Második feladat</b>
+      </h1>
+      <p class="mb-2">
+        1. Gombnyomásra küldj AJAX kérést a
+        <br />
+        <small>
+          <a target="_blank" href="http://jsonplaceholder.typicode.com/todos"
+            style="word-break: break-all; word-wrap:break-word;">
+            http://jsonplaceholder.typicode.com/todos
+          </a>
+        </small>
+        URL-re és szerezd meg a teendők (angolul "todo"-k) listáját!
+      </p>
+
+      <p class="mb-2">
+        2. Amíg a lekérdezés folyamatban van, jeleníts meg egy <code>"Betöltés folyamatban..."</code> feliratot!
+      </p>
+
+      <p class="mb-2">
+        3. A kapott adathalmazt array methodok segítségével alakítsd át úgy, hogy a végeredmény csak azon teendők
+        címeiből
+        álljon, amelyeknél a
+        <code>completed</code>
+        kulcs alatt
+        <code>true</code>
+        érték van.
+      </p>
+
+      <p class="mb-2">
+        4. Jelenítsd meg a címeket!
+      </p>
+
+      <p class="mb-2 text-center">
+        A kívánt végeredmény:
+      </p>
+      <button class="btn btn-primary mb-2 m-auto d-flex" id="fetch-btn">Próbáld ki</button>
+
+    </div>
+    <div id="todo-list"></div>
+  </div>
+  <script src="./script.js"></script>
+</body>
+
+</html>

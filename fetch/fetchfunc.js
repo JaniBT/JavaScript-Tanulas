@@ -18,6 +18,12 @@ let state = []
 
 form.onsubmit = (e) => {
   e.preventDefault()
+  const inProgress = document.getElementById('message')
+  inProgress.textContent = 'Folyamatban'
+  e.target.elements.email.disabled = true
+  e.target.elements.password.disabled = true
+  document.querySelector('#login button').disabled = true
+
   const Email = e.target.elements.email.value
   const passWord = e.target.elements.password.value
 
@@ -38,6 +44,11 @@ form.onsubmit = (e) => {
     if (!response.ok) {
       return Promise.reject('login_error')
     }
+    const panel = document.querySelector('.container .row .col-6')
+    panel.style.display = "none"
+    const message = document.getElementById('message')
+    message.innerHTML
+
     return response.json()
   })
   .then((response) => {
@@ -47,6 +58,7 @@ form.onsubmit = (e) => {
     if (!response.ok) {
       return Promise.reject('users error')
     }
+    
     return response.json()
   })
   .then((userPage) => {
@@ -55,7 +67,12 @@ form.onsubmit = (e) => {
     renderUsers()
   })
   .catch((error) => {
-    console.error('Hiba: ', error)
+    alert(error)
+    const inProgress = document.getElementById('message')
+    inProgress.textContent = ''
+    e.target.elements.email.disabled = false
+    e.target.elements.password.disabled = false
+    document.querySelector('#login button').disabled = false
   })
 }
 
