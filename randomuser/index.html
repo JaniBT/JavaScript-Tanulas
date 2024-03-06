@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="user">
+        <label for="nev">Teljes Név:</label>
+        <input type="text" placeholder="John Doe" name="nev" id="nev">
+        <label for="nem">Neme:</label>
+        <select name="nem" id="neme">
+            <option value="0">Férfi</option>
+            <option value="1">Nő</option>
+        </select>
+        <label for="szulDat">Születési Idő:</label>
+        <input type="date" placeholder="éééé. hh. nn." name="szulDat" id="szuletes">
+        <label for="lakhely">Lakhely:</label>
+        <input type="text" name="lakhely" placeholder="Bucsa">
+        <label for="email">E-mail:</label>
+        <input type="email" placeholder="johndoe@gmail.com" name="email" id="email">
+        <label for="telSzam">Telefonszám:</label>
+        <input type="text" placeholder="20 313 8482" name="telSzam" id="telSzam">
+        <label for="felhaszNev">Felhasználónév:</label>
+        <input type="text" placeholder="kys232" name="felhaszNev" id="felhaszNev">
+        <label for="jelszo">Jelszó:</label>
+        <input type="password" placeholder="afhkljflk" name="jelszo" id="jelszo">
+        <label for="kep">Profilkép:</label>
+        <input type="file" name="kep" id="kep">
+        <button type="submit">Küldés</button>
+    </form>
+
+    <div id="file-preview"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>

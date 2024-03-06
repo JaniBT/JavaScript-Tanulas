@@ -1,0 +1,12 @@
+form{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+#file-preview{
+    display: block;
+}
