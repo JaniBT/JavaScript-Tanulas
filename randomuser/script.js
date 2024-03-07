@@ -18,9 +18,9 @@ function handleFileSelect(event) {
 }
 
 const API_URL = 'https://randomuser.me/api/'
-const user = document.querySelector('#user')
+const user_sent = document.querySelector('#user')
 
-user.onsubmit = (e) => {
+user_sent.onsubmit = (e) => {
     e.preventDefault()
     let fullName = e.target.elements.nev.value
     let szamNem = e.target.elements.nem.value
@@ -38,28 +38,57 @@ user.onsubmit = (e) => {
     let dataPassword = e.target.elements.jelszo.value
     let dataProfilePicture = e.target.elements.kep.value
 
-    const data = {
-        name: fullName,
-        gender: dataGender,
-        date: bornDate,
-        location: dataCity,
-        email: dataEmail,
-        login: dataUserName,
-        password: dataPassword,
-        phone: dataMobileNumber,
-        picture: dataProfilePicture
-    }
+    // const data = {
+    //     name: fullName,
+    //     gender: dataGender,
+    //     date: bornDate,
+    //     location: dataCity,
+    //     email: dataEmail,
+    //     login: dataUserName,
+    //     password: dataPassword,
+    //     phone: dataMobileNumber,
+    //     picture: dataProfilePicture
+    // }
 
-    fetch('https://randomuser.me/api/', {
-        method: 'POST',
+    fetch(API_URL, {
+        method: 'GET',
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify()
     })
     .then(response => response.json)
     .then(data => {
         console.log(data)
     })
     .catch(error => console.error("Error: ", error))
+}
+
+let user = {}
+
+document.querySelector('#template-data-btn').onclick = (e) => {
+    fetch(API_URL, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+    })
+    .then(response => response.json())
+    .then(data => {
+        user = data.results[0]
+        render()
+    })
+    .catch(error => console.error("Hiba: ", error))
+}
+
+function render() {
+    document.querySelector('#nev').value = user.name.title + " " + user.name.first + " " + user.name.last
+    document.querySelector('#neme').value = user.gender
+    document.querySelector('#szuletes').value = user.dob.date
+    document.querySelector('#lakhely').value = user.location.street.name + " " + user.location.street.number
+    document.querySelector('#email').value = user.email
+    document.querySelector('#telSzam').value = user.phone
+    document.querySelector('#felhaszNev').value = user.login.username
+    document.querySelector('#jelszo').value = user.login.password
+    document.querySelector('#kep').innerHTML = user.picture.thumbnail
 }
