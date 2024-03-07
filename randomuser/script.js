@@ -83,12 +83,12 @@ document.querySelector('#template-data-btn').onclick = (e) => {
 
 function render() {
     document.querySelector('#nev').value = user.name.title + " " + user.name.first + " " + user.name.last
-    document.querySelector('#neme').value = user.gender
-    document.querySelector('#szuletes').value = user.dob.date
+    document.querySelector('#neme').value = user.gender == "male" ? "0" : "1"
+    document.querySelector('#szuletes').value = user.dob.date.split('T')[0]
     document.querySelector('#lakhely').value = user.location.street.name + " " + user.location.street.number
     document.querySelector('#email').value = user.email
     document.querySelector('#telSzam').value = user.phone
     document.querySelector('#felhaszNev').value = user.login.username
     document.querySelector('#jelszo').value = user.login.password
-    document.querySelector('#kep').innerHTML = user.picture.thumbnail
+    document.querySelector('#kep').innerHTML = `<img src="${user.picture.thumbnail}" alt="">`
 }
