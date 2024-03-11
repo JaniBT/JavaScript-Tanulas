@@ -1,0 +1,1 @@
+gsap.to(".rectangle", {duration: 2, x: 300, backgroundColor: "#560563", borderRadius: "50%", ease: "power4.out"})
