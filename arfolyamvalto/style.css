@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #242424;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+table{
+    border: 1px solid gainsboro;
+    text-align: left;
+    color: white;
+    font-size: 2rem;
+}
+
+td{
+    padding: 0.5rem;
+}
+
+tr:nth-child(even) {
+    background-color: slategray;
+}
+
+#ido p{
+    text-align: center;
+    color: lime;
+    font-size: 1.2rem;
+}
+
+.mainText h1{
+    text-align: center;
+    color: white;
+}
+
+.customExchange{
+    margin-top: 2rem;
+}
+
+.flexbox{
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.flexbox:nth-child(1) {
+    align-self: center;
+    flex-grow: 1;
+}
+
+.flexbox:nth-child(2) {
+    flex-grow: 1;
+}
+
+.customExchange{
+    text-align: center;
+    color: white;
+}
+
+#valutak{
+    padding: 0.5rem;
+    margin-bottom: 3rem;
+}
+
+.ertekMegadas{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}

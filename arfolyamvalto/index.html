@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Árfolyam átváltó</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="arfolyamok">
+        <div class="mainText">
+            <h1>Árfolyamok</h1>
+        </div>
+        <div id="ido">
+            <p>Adatok lekérve: <span id="idopont"></span></p>
+        </div>
+        <table>
+            <tr>
+                <th>Valuta</th>
+                <th>Árfolyam</th>
+            </tr>
+            <tr>
+                <td>euró</td>
+                <td id="eur"></td>
+            </tr>
+            <tr>
+                <td>amerikai dollár</td>
+                <td id="usd"></td>
+            </tr>
+            <tr>
+                <td>angol font</td>
+                <td id="font"></td>
+            </tr>
+            <tr>
+                <td>svájci frank</td>
+                <td id="fra"></td>
+            </tr>
+            <tr>
+                <td>japán jen</td>
+                <td id="jen"></td>
+            </tr>
+            <tr>
+                <td>cseh korona</td>
+                <td id="korona"></td>
+            </tr>
+            <tr>
+                <td>lengyel zloty</td>
+                <td id="zloty"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="customExchange">
+        <h2>Valuta váltó</h2>
+        <div class="flexbox">
+            <div>
+                <select name="valutak" id="valutak">
+                    <option value="0" selected>Válassz valutát</option>
+                    <option value="eur">Euró</option>
+                    <option value="usd">Amerikai dollár</option>
+                    <option value="gbp">Angol font</option>
+                    <option value="chf">Svájci frank</option>
+                    <option value="jpy">Japán jen</option>
+                    <option value="pln">Lengyel zloty</option>
+                </select>
+            </div>
+            <div class="ertekMegadas">
+                <label for="ertek">Átváltani kívánt összeg</label>
+                <input type="number" name="ertek" id="atvaltaniKivantErtek" placeholder="384">
+            </div>
+        </div>
+        <div>
+            <button type="button" id="atvaltas_gomb">Átváltás</button>
+        </div>
+        <div>
+            <p id="teljesertek">Érték forintban: <span id="ertekKiiras"></span></p>
+        </div>
+    </div>
+
+    <script src="atvalto.js"></script>
+</body>
+</html>

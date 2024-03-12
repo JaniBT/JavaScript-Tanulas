@@ -64,22 +64,33 @@ user_sent.onsubmit = (e) => {
     .catch(error => console.error("Error: ", error))
 }
 
+// document.querySelector('#template-data-btn').onclick = (e) => {
+//     fetch(API_URL, {
+//         method: 'GET',
+//         headers: {
+//             'Content-Type': 'application/json'
+//         },
+//     })
+//     .then(response => response.json())
+//     .then(data => {
+//         user = data.results[0]
+//         render()
+//     })
+//     .catch(error => console.error("Hiba: ", error))
+// }
+
 let user = {}
 
-document.querySelector('#template-data-btn').onclick = (e) => {
-    fetch(API_URL, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-    })
-    .then(response => response.json())
-    .then(data => {
-        user = data.results[0]
-        render()
-    })
-    .catch(error => console.error("Hiba: ", error))
+async function getData() {
+    let response = await fetch(API_URL)
+    let data = await response.json()
+    user = data.results[0]
+    render()
 }
+
+document.querySelector('#template-data-btn').addEventListener('click', (e) => {
+    getData()
+})
 
 function render() {
     document.querySelector('#nev').value = user.name.title + " " + user.name.first + " " + user.name.last
