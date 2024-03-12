@@ -3,85 +3,78 @@
     Body:
     {
       email: "eve.holt@reqres.in",
-      password: "ok"
+      password: "ok" - jelenleg bármilyen jelszóval működik
     }
 
     Users url: https://reqres.in/api/users
 */
 
-const LOGIN_API = 'https://reqres.in/api/login'
-const USER_API = 'https://reqres.in/api/users'
-
-const form = document.querySelector('#login')
-
 let state = []
 
-form.onsubmit = (e) => {
-  e.preventDefault()
-  const inProgress = document.getElementById('message')
-  inProgress.textContent = 'Folyamatban'
-  e.target.elements.email.disabled = true
-  e.target.elements.password.disabled = true
-  document.querySelector('#login button').disabled = true
+document.getElementById('login').onsubmit = e => {
+    e.preventDefault()
 
-  const Email = e.target.elements.email.value
-  const passWord = e.target.elements.password.value
+    let inProgress = document.getElementById('message')
+    inProgress.textContent = 'Folyamatban...'
+    e.target.elements.email.disabled = true
+    e.target.elements.password.disabled = true
+    document.querySelector('#login button').disabled = true
+    const email = e.target.elements.email.value
+    const password = e.target.elements.password.value
+    console.log('Email:', email)
+    console.log('Password:', password)
 
-  const body = JSON.stringify({
-    email: Email,
-    password: passWord
-  })
+    const body = JSON.stringify({
+        email: email,
+        password: password
+    })
 
-  fetch(LOGIN_API, {
-    method: 'POST',
-    body: body,
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then((response) => {
-    console.log(response)
-    if (!response.ok) {
-      return Promise.reject('login_error')
+    loginAndFetchUsers(body)
+}
+
+// with async an API
+
+async function loginAndFetchUsers(body){
+    let loginRespone = await fetch('https://reqres.in/api/login', {
+        method: 'POST',
+        body: body,
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    if (!loginRespone.ok) {
+        alert('Login Failed')
+        defaultInput()
+        return
     }
     const panel = document.querySelector('.container .row .col-6')
-    panel.style.display = "none"
-    const message = document.getElementById('message')
-    message.innerHTML
-
-    return response.json()
-  })
-  .then((response) => {
-    return fetch(USER_API)
-  })
-  .then((response) => {
-    if (!response.ok) {
-      return Promise.reject('users error')
+    panel.style.display = 'none'
+    // console.log(token)
+    let userResponse = await fetch('https://reqres.in/api/users')
+    if (!userResponse.ok) {
+        console.log('users_error')
+        defaultInput()
+        return
     }
-    
-    return response.json()
-  })
-  .then((userPage) => {
-    console.log(userPage)
+    let userPage = await userResponse.json()
     state = userPage.data
+    defaultInput()
     renderUsers()
-  })
-  .catch((error) => {
-    alert(error)
-    const inProgress = document.getElementById('message')
-    inProgress.textContent = ''
-    e.target.elements.email.disabled = false
-    e.target.elements.password.disabled = false
-    document.querySelector('#login button').disabled = false
-  })
+}
+
+function defaultInput(){
+  document.getElementById('message').textContent = ''
+  document.getElementById('login').elements.email.disabled = false
+  document.getElementById('login').elements.password.disabled = false
+  document.querySelector('#login button').disabled = false
 }
 
 function renderUsers() {
-  let usersHTML = ''
 
-  for (let user of state) {
-    usersHTML += `<li class="list-group-item">${user.first_name} ${user.last_name}</li>`
-  }
+    let usersHTML = ''
 
-  document.querySelector('#user-list-container').innerHTML = `<ul class="list-group">${usersHTML}</ul>`
+    for(let user of state){
+        usersHTML += `<li class="list-group-item">${user.first_name} ${user.last_name}</li>`
+    }
+    document.getElementById('user-list-container').innerHTML = '<ul class="list-group">' + usersHTML + '</ul>'
 }
