@@ -6,8 +6,17 @@
 const API_URL = 'https://api.ipify.org/?format=json'
 
 let myIP = ''
-let state = {}
+let state
 
+function getDataFromIP() {
+    fetch(`https://ipinfo.io/${myIP}/geo`)
+    .then(response => response.json())
+    .then(data => {
+        state = data
+        render(myIP, state)
+    })
+    .catch(error => console.error('Hiba', error))
+}
 
 function getIP() {
     fetch(API_URL)
@@ -15,24 +24,23 @@ function getIP() {
     .then(data => {
         myIP = data.ip
         getDataFromIP()
-        render(myIP, state)
     })
     .catch(error => console.error('Hiba: ', error))
 }
 
-getIP()
-
-function render(IP, state) {
+function render(IP, adattable) {
     document.querySelector('#ip-cim').innerHTML = IP
     const adatok = document.querySelectorAll('.adat')
-    
+    let table = []
+    for (const key in adattable) {
+        let ertek = adattable[key]
+        table.push(ertek)
+    }
+    let index = 1
+    for (const adat of adatok) {
+        adat.innerHTML = table[index]
+        index += 1
+    }
 }
 
-function getDataFromIP() {
-    fetch(`https://ipinfo.io/${myIP}/geo`)
-    .then(response => response.json())
-    .then(data => {
-        state = data
-    })
-    .catch(error => console.error('Hiba', error))
-}
+window.onload = getIP()
