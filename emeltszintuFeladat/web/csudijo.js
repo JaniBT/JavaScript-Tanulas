@@ -21,7 +21,7 @@ async function vendegkonyv() {
     try {
         const bejegyzes = document.querySelector('#bejegyzes')
         let test = {
-            velemeny: bejegyzes.value
+            bejegyzes: bejegyzes.value
         }
         const response = await fetch('/api/vendegkonyv', {
             method: 'POST',

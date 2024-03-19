@@ -10,10 +10,15 @@ select count(etel) as 'etelek-szama' from termekek
 where etel = 1
 ***
 17. feladat
-
+select termekek.nev, termekek.ar from termekek
+inner join kategoriak on kategoriak.id = termekek.kategoriaId
+where kategoriak.id = 6
 ***
 18. feladat
-
+insert into termekek
+(nev, ar, kategoriaId, etel)
+value
+("Málnahabos pohárkrém", 1090, 6, 1)
 ***
 19. feladat
 
