@@ -21,7 +21,12 @@ value
 ("Málnahabos pohárkrém", 1090, 6, 1)
 ***
 19. feladat
-
+select rendelesek.termekNev, sum(rendelesek.mennyiseg) as mennyiseg from rendelesek
+inner join termekek on termekek.nev = rendelesek.termekNev
+where termekek.kategoriaId < 7
+group by termekNev
+order by mennyiseg desc
+limit 3
 ***
 20. feladat
 
