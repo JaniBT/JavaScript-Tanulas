@@ -29,4 +29,3 @@ order by mennyiseg desc
 limit 3
 ***
 20. feladat
-
