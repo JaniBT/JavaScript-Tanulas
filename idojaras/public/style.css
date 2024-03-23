@@ -1,0 +1,45 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+html{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #242424;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1, h2, h3, p{
+    margin: 0;
+}
+
+button {
+    padding: 0.6rem 0.4rem;
+    margin: 2rem;
+    border-radius: 0;
+    border: 3px solid blue;
+    background-color: darkcyan;
+    color: white;
+    box-shadow: 0px 0px 10px blueviolet,
+                0px 0px 20px blueviolet,
+                0px 0px 40px blueviolet;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.forecast h1, h2, h3, p{
+    color: aliceblue;
+}
+
+.forecast h2, h3{
+    text-align: center;
+}

@@ -1,19 +1,22 @@
 const express = require('express')
 const app = express()
+const path = require('path')
 
 app.set('view engine', 'ejs')
+app.set('views', path.join(__dirname, 'views'))
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.get('/', () => {
-    app.render('index')
+app.get('/', (req, res) => {
+    res.render('index', { title: 'Időjárás' })
 })
 
-async function getData() {
-    const response = await fetch('/')
-    const data = await response.json()
-    console.log(data)
-}
-
-getData()
+app.get('/api', (req, res) => {
+    fetch("https://api.infojegyzet.hu/idojaras/")
+    .then(response => response.json())
+    .then(data => {
+        res.send(JSON.stringify(data))
+    })
+})
 
 const PORT = 3000
 app.listen(PORT, () => {

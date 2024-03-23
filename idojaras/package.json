@@ -1,7 +1,6 @@
 {
   "name": "idojaras",
   "version": "1.0.0",
-  "proxy": "https://api.infojegyzet.hu/idojaras/",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.19.1"
   },
   "devDependencies": {
