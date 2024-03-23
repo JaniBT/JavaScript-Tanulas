@@ -6,7 +6,6 @@ async function getData() {
         orszag: data.location.country,
         varos: data.location.name,
         forecast3nap: data.forecast.forecastday,
-        temp: data.forecast.forecastday
     }
     render(adatok)
 }
@@ -20,7 +19,6 @@ function render(datas) {
         i++
     }
     const allDate = document.querySelectorAll('th')
-    const allTemp = document.querySelectorAll('td')
     let j = 0
     for (const date of allDate) {
         date.innerHTML = datas.forecast3nap[j].date
@@ -35,7 +33,7 @@ function render(datas) {
     const elso_nap = document.querySelectorAll('.elso-nap')
     const masodik_nap = document.querySelectorAll('.masodik-nap')
     const harmadik_nap = document.querySelectorAll('.harmadik-nap')
-    for (const temp of datas.temp[j].hour[k]) {
+    for (const temp of datas.forecast3nap[j].hour[k].temp_c) {
         if (j === 0) {
             for (const elso of elso_nap) {
                 elso.innerHTML = temp.temp_c + "°C"
