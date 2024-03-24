@@ -36,12 +36,7 @@ function render(datas) {
         date.innerHTML = datas.forecast3nap[j].date
         j++
     }
-    j = 0
-    let k = 0
-    // for (const temp of allTemp) {
-    //     temp.innerHTML = datas.temp[j].hour[j].temp_c + "°C"
-    //     j++
-    // }
+
     const elso_nap = document.querySelectorAll('.elso-nap')
     const masodik_nap = document.querySelectorAll('.masodik-nap')
     const harmadik_nap = document.querySelectorAll('.harmadik-nap')
