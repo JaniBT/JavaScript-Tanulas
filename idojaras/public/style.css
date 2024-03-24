@@ -75,3 +75,7 @@ tr:hover {
     background-color: #ddd;
     color: black;
 }
+
+#table{
+    display: none;
+}

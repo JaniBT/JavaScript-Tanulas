@@ -11,6 +11,18 @@ async function getData() {
 }
 
 function render(datas) {
+    document.querySelector('#table').style.display = "block"
+
+    const hour = document.querySelector('#hour')
+    hour.innerHTML = "Óra"
+
+    const full_hour = document.querySelectorAll('.full-hour')
+    let hour_counter = 0
+    for (const hour of full_hour) {
+        hour.innerHTML = hour_counter + ':00'
+        hour_counter++
+    }
+
     const allData = document.querySelectorAll('.adatok')
     const datasArray = [datas.orszag, datas.varos]
     let i = 0
@@ -18,7 +30,7 @@ function render(datas) {
         data.innerHTML = datasArray[i]
         i++
     }
-    const allDate = document.querySelectorAll('th')
+    const allDate = document.querySelectorAll('.table-head')
     let j = 0
     for (const date of allDate) {
         date.innerHTML = datas.forecast3nap[j].date
@@ -33,32 +45,20 @@ function render(datas) {
     const elso_nap = document.querySelectorAll('.elso-nap')
     const masodik_nap = document.querySelectorAll('.masodik-nap')
     const harmadik_nap = document.querySelectorAll('.harmadik-nap')
-    for (const temp of datas.forecast3nap[j].hour[k].temp_c) {
-        if (j === 0) {
-            for (const elso of elso_nap) {
-                elso.innerHTML = temp.temp_c + "°C"
-                k++
-            }
-            if (k === 23) {
-                k = 0
-                j++
-            }
-        } else if (j === 1) {
-            for (const masodik of masodik_nap) {
-                masodik.innerHTML = temp.temp_c + "°C"
-            }
-            if (k === 23) {
-                k = 0
-                j++
-            }
-        } else {
-            for (const harmadik of harmadik_nap) {
-                harmadik.innerHTML = temp.temp_c + "°C"
-            }
-            if (k === 23) {
-                k = 0
-                j++
-            }
-        }
+    let ora_count = 0
+    for (const elso of elso_nap) {
+        elso.innerHTML = datas.forecast3nap[0].hour[ora_count].temp_c + "°C"
+        ora_count++
     }
+    ora_count = 0
+    for (const masodik of masodik_nap) {
+        masodik.innerHTML = datas.forecast3nap[1].hour[ora_count].temp_c + "°C"
+        ora_count++
+    }
+    ora_count = 0
+    for (const harmadik of harmadik_nap) {
+        harmadik.innerHTML = datas.forecast3nap[2].hour[ora_count].temp_c + "°C"
+        ora_count++
+    }
+    ora_count = 0
 }
