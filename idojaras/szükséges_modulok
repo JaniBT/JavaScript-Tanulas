@@ -1,0 +1,11 @@
+--------
+Modulok:
+--------
+
+express
+express ejs
+nodemon
+
+-----------
+npm run dev
+-----------
