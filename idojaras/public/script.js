@@ -42,17 +42,17 @@ function render(datas) {
     const harmadik_nap = document.querySelectorAll('.harmadik-nap')
     let ora_count = 0
     for (const elso of elso_nap) {
-        elso.innerHTML = datas.forecast3nap[0].hour[ora_count].temp_c + "°C"
+        elso.innerHTML = `<span>${datas.forecast3nap[1].hour[ora_count].temp_c}</span>` + "°C" + `<img src="${datas.forecast3nap[0].hour[ora_count].condition.icon}">`
         ora_count++
     }
     ora_count = 0
     for (const masodik of masodik_nap) {
-        masodik.innerHTML = datas.forecast3nap[1].hour[ora_count].temp_c + "°C"
+        masodik.innerHTML = `<span>${datas.forecast3nap[1].hour[ora_count].temp_c}</span>` + "°C" + `<img src="${datas.forecast3nap[0].hour[ora_count].condition.icon}">`
         ora_count++
     }
     ora_count = 0
     for (const harmadik of harmadik_nap) {
-        harmadik.innerHTML = datas.forecast3nap[2].hour[ora_count].temp_c + "°C"
+        harmadik.innerHTML = `<span>${datas.forecast3nap[1].hour[ora_count].temp_c}</span>` + "°C" + `<img src="${datas.forecast3nap[0].hour[ora_count].condition.icon}">`
         ora_count++
     }
     ora_count = 0
